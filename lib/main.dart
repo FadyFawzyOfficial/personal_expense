@@ -20,6 +20,8 @@ class MyHomePage extends StatelessWidget {
         title: Text('Personal Expenses'),
       ),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Container(
             width: double.infinity,
@@ -31,6 +33,7 @@ class MyHomePage extends StatelessWidget {
           ),
           Card(
             child: Text('List Of TX'),
+            color: Colors.red,
           ),
         ],
       ),
