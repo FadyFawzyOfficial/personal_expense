@@ -77,13 +77,27 @@ class MyHomePage extends StatelessWidget {
                             padding: EdgeInsets.all(10),
                           ),
                           Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(transaction.title),
-                              Text(transaction.data.toString()),
+                              Text(
+                                transaction.title,
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              Text(
+                                transaction.data.toString(),
+                                style: TextStyle(
+                                  color: Colors.grey,
+                                ),
+                              ),
                             ],
                           )
                         ],
                       ),
+                      elevation: 5,
                     ),
                   )
                   .toList()
