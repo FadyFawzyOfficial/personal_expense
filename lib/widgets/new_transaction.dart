@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
-class NewTransactions extends StatelessWidget {
+class NewTransactions extends StatefulWidget {
   final Function addNewTransaction;
 
+  NewTransactions(this.addNewTransaction);
+
+  @override
+  _NewTransactionsState createState() => _NewTransactionsState();
+}
+
+class _NewTransactionsState extends State<NewTransactions> {
   final titleController = TextEditingController();
   final amountController = TextEditingController();
-
-  NewTransactions(this.addNewTransaction);
 
   @override
   Widget build(BuildContext context) {
@@ -45,6 +49,8 @@ class NewTransactions extends StatelessWidget {
 
     if (enteredTitle.isEmpty || enteredAmount <= 0) return;
 
-    addNewTransaction(enteredTitle, enteredAmount);
+    widget.addNewTransaction(enteredTitle, enteredAmount);
+
+    Navigator.of(context).pop();
   }
 }
